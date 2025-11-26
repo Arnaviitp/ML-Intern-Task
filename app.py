@@ -31,44 +31,101 @@ st.set_page_config(
 # Custom CSS for better UI
 st.markdown("""
     <style>
-    .main {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
+    /* Main container styling - Dark Mode */
     .stApp {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background-color: #0e1117;
+        color: #fafafa;
     }
-    .css-1d391kg {
-        padding: 2rem 1rem;
-    }
+    
+    /* Headings */
     h1 {
-        color: #2d3748;
+        color: #ffffff;
+        font-family: 'Helvetica Neue', sans-serif;
         font-weight: 800;
         text-align: center;
-        padding: 1rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 1.5rem 0;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        background: linear-gradient(90deg, #818cf8 0%, #c084fc 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+    
+    h2, h3 {
+        color: #e2e8f0;
+        font-weight: 600;
+    }
+    
+    /* Sidebar styling */
+    section[data-testid="stSidebar"] {
+        background-color: #1a1c24;
+        border-right: 1px solid #2d3748;
+    }
+    
+    /* Button styling */
     .stButton>button {
         width: 100%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
         color: white;
         font-weight: 600;
-        border-radius: 10px;
-        padding: 0.75rem;
+        border-radius: 8px;
+        padding: 0.6rem 1rem;
         border: none;
-        transition: transform 0.2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.2s ease;
     }
+    
     .stButton>button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(99, 102, 241, 0.4);
+        background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
     }
+    
+    /* Input fields and select boxes */
+    .stTextInput>div>div>input, .stSelectbox>div>div>div {
+        background-color: #262730;
+        border-radius: 8px;
+        border: 1px solid #4b5563;
+        color: #ffffff;
+    }
+    
+    /* Text areas */
+    .stTextArea>div>div>textarea {
+        background-color: #262730;
+        border-radius: 8px;
+        border: 1px solid #4b5563;
+        color: #ffffff;
+    }
+    
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        background-color: #262730;
+        border-radius: 8px;
+        border: 1px solid #4b5563;
+        color: #ffffff;
+    }
+    
+    /* Custom info box */
     .info-box {
-        background: white;
+        background-color: #1e293b;
         padding: 1.5rem;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        margin: 1rem 0;
+        border-left: 5px solid #6366f1;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        margin-bottom: 1rem;
+        color: #e2e8f0;
+    }
+    
+    /* Success/Error messages */
+    .stSuccess, .stError, .stInfo, .stWarning {
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: #1e293b;
+        color: #ffffff;
+    }
+    
+    /* Labels */
+    .stMarkdown p, label {
+        color: #e2e8f0 !important;
     }
     </style>
 """, unsafe_allow_html=True)
