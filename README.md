@@ -495,6 +495,6 @@ For issues and questions:
 
 ---
 
-**Made with ❤️ using open-source AI technology**
+**Made with ❤️ by Arnav**
 
 *Remember: With great AI power comes great responsibility. Use ethically!*
