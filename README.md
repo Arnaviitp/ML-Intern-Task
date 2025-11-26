@@ -101,7 +101,7 @@ ML Task/
 1. **Clone or download the repository**
 
 ```bash
-cd "c:\Users\ARNAV\OneDrive\Desktop\ML Task"
+cd "c:\Users\ML-Intern-Task"
 ```
 
 2. **Create a virtual environment** (recommended)
