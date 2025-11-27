@@ -1,0 +1,13 @@
+{
+    "prompt": "Majestic mountain landscape at golden hour, dramatic clouds, \nmisty valleys, epic scale, professional photography, highly detailed, highly detailed, professional photography, 8k, photorealistic",
+    "negative_prompt": "blurry, low quality, distorted, deformed, ugly, bad anatomy",
+    "timestamp": "2025-11-27 12:36:17",
+    "model": "runwayml/stable-diffusion-v1-5",
+    "parameters": {
+        "guidance_scale": 7.5,
+        "num_inference_steps": 80,
+        "seed": "random",
+        "width": 512,
+        "height": 512
+    }
+}
