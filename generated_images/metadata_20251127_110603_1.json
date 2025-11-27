@@ -1,0 +1,13 @@
+{
+    "prompt": "beautiful forest with a river flowing and mountains at the back, highly detailed, professional photography, 8k, photorealistic",
+    "negative_prompt": "blurry, low quality, distorted, deformed, ugly, bad anatomy",
+    "timestamp": "2025-11-27 11:05:17",
+    "model": "runwayml/stable-diffusion-v1-5",
+    "parameters": {
+        "guidance_scale": 7.5,
+        "num_inference_steps": 50,
+        "seed": "random",
+        "width": 512,
+        "height": 512
+    }
+}
