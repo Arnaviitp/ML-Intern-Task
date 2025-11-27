@@ -508,7 +508,7 @@ def main():
             results = st.session_state.last_results
             
             for idx, (image, metadata) in enumerate(results):
-                st.image(image, caption=f"Image {idx+1}", use_container_width=True)
+                st.image(image, caption=f"Image {idx+1}", width="stretch")
                 
                 # Download button
                 buf = io.BytesIO()
