@@ -221,16 +221,16 @@ class ImageGenerator:
             
             try:
                 # Generate image
-                with torch.autocast(self.device):
-                    output = self.pipeline(
-                        prompt=prompt,
-                        negative_prompt=negative_prompt,
-                        num_inference_steps=num_inference_steps,
-                        guidance_scale=guidance_scale,
-                        width=width,
-                        height=height,
-                        generator=generator
-                    )
+                # with torch.autocast(self.device): # Removed for CPU stability
+                output = self.pipeline(
+                    prompt=prompt,
+                    negative_prompt=negative_prompt,
+                    num_inference_steps=num_inference_steps,
+                    guidance_scale=guidance_scale,
+                    width=width,
+                    height=height,
+                    generator=generator
+                )
                 
                 image = output.images[0]
                 
@@ -353,14 +353,20 @@ def main():
             help="Higher values = more adherence to prompt (7-12 recommended)"
         )
         
+        # Determine default steps based on device
+        default_steps = 50 if generator.device == "cuda" else 20
+        
         num_inference_steps = st.slider(
             "Inference Steps",
             min_value=10,
             max_value=100,
-            value=50,
+            value=default_steps,
             step=5,
             help="More steps = better quality but slower (30-50 recommended)"
         )
+        
+        if generator.device == "cpu":
+             st.caption("⚠️ CPU detected: Lower steps (20-25) recommended for faster generation.")
         
         seed = st.number_input(
             "Seed (0 for random)",
@@ -502,7 +508,7 @@ def main():
             results = st.session_state.last_results
             
             for idx, (image, metadata) in enumerate(results):
-                st.image(image, caption=f"Image {idx+1}", use_column_width=True)
+                st.image(image, caption=f"Image {idx+1}", use_container_width=True)
                 
                 # Download button
                 buf = io.BytesIO()
